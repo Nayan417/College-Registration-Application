@@ -45,22 +45,28 @@ class HomeFrame extends JFrame implements ActionListener{
    admnLeb.setBounds(lftmrgn, topmrgn, textWidth, textHeight);
    c.add(admnLeb);
    admBtn = new JButton("Login");
+   admBtn.setFont(new Font("Serif", Font.BOLD, 20));
    admBtn.setBounds(leftColmrgn, topmrgn, btnWidth, textHeight);
    c.add(admBtn);
    admBtn.addActionListener(this);
 
    regLeb = new JLabel("For Registration Click here");
+   regLeb.setFont(new Font("Serif", Font.BOLD, 20));
    regLeb.setBounds(lftmrgn, topmrgn+=80, textWidth, textHeight);
    c.add(regLeb);
    regBtn = new JButton(" New ");
+   regBtn.setFont(new Font("Serif", Font.BOLD, 20));
    regBtn.setBounds(leftColmrgn, topmrgn, btnWidth, textHeight);
    c.add(regBtn);
    regBtn.addActionListener(this);
 
    userLeb = new JLabel("For User login click here");
+   userLeb.setFont(new Font("Serif", Font.BOLD, 20));
    userLeb.setBounds(lftmrgn, topmrgn+=80, textWidth, textHeight);
    c.add(userLeb);
+
    userBtn = new JButton("User");
+   userBtn.setFont(new Font("Serif", Font.BOLD, 20));
    userBtn.setBounds(leftColmrgn, topmrgn, btnWidth, textHeight);
    c.add(userBtn);
    userBtn.addActionListener(this);
