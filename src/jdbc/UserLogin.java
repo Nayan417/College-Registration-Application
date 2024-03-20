@@ -2,6 +2,7 @@ package jdbc;
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -26,7 +27,7 @@ class UserFrame extends JFrame implements ActionListener{
 
   public UserFrame() {
 
-  setTitle("Login Page");
+  setTitle("User Login Page");
   setSize(650, 600);
   setLocationRelativeTo(null);
   setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,13 +38,15 @@ class UserFrame extends JFrame implements ActionListener{
    int lftmgn = 50, topmgn = 50;
       // Taking Roll_No from user
       rollLeb = new JLabel("Enter Roll No");
-      rollLeb.setBounds(lftmgn, topmgn+=150, 100, 30);
+      rollLeb.setBounds(lftmgn, topmgn+=150, 150, 30);
+      rollLeb.setFont(new Font("Serif", Font.BOLD, 20));
       c.add(rollLeb);
       rollFd = new JTextField();
       rollFd.setBounds(lftmgn+210, topmgn, 150, 30);
       c.add(rollFd);
 
       emailLeb = new JLabel("Enter Password ");
+      emailLeb.setFont(new Font("Serif", Font.BOLD, 20));
       emailLeb.setBounds(lftmgn, topmgn+=50, 200, 30);
       c.add(emailLeb);
       passwordFd = new JTextField();

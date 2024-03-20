@@ -2,6 +2,7 @@ package jdbc.Admin;
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -27,7 +28,7 @@ class AdminFrame extends JFrame implements ActionListener{
 
   public AdminFrame() {
 
-  setTitle("Login Page");
+  setTitle("Admin Login Page");
   setSize(650, 600);
   setLocationRelativeTo(null);
   setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,7 +39,8 @@ class AdminFrame extends JFrame implements ActionListener{
    int lftmgn = 50, topmgn = 100, btnWidth=100, btnHeight = 30;
       // Taking Roll_No from user
       rollLeb = new JLabel("Enter Name");
-      rollLeb.setBounds(lftmgn, topmgn+=150, 100, 30);
+      rollLeb.setFont(new Font("Serif", Font.BOLD, 20));
+      rollLeb.setBounds(lftmgn, topmgn+=150, 150, 30);
       c.add(rollLeb);
       rollFd = new JTextField();
       rollFd.setBounds(lftmgn+210, topmgn, 150, 30);
@@ -46,6 +48,7 @@ class AdminFrame extends JFrame implements ActionListener{
 
       emailLeb = new JLabel("Enter Password ");
       emailLeb.setBounds(lftmgn, topmgn+=50, 200, 30);
+      emailLeb.setFont(new Font("Serif", Font.BOLD, 20));
       c.add(emailLeb);
       passwordFd = new JTextField();
       passwordFd.setBounds(lftmgn+210, topmgn, 150, 30);
