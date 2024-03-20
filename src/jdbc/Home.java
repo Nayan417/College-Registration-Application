@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import jdbc.Admin.AHome;
+import jdbc.Admin.AdLoginFm;
 import registrationForm.Form;
 
 public class Home {
@@ -69,7 +70,8 @@ class HomeFrame extends JFrame implements ActionListener{
     
     // Redirect to Admin Profile
     if (button.equals("Login")) {
-      AHome admin = new AHome();
+      // AHome admin = new AHome();
+         AdLoginFm admin = new AdLoginFm();
       // frameToClose.dispose();
       System.out.println("Admin profile");
     }

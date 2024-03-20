@@ -116,12 +116,20 @@ public class DAO {
  // Update Data
  public static void updateData(String id, String oldData, String newData) throws SQLException {
   Connection conn = DB.connect();
-  String query = Query.update;
+  String query = null;
+  if (oldData.equals("Name")) {
+    query = Query.updateName;
+  } else if (oldData.equals("Course")) {
+    query = Query.updateCourse;
+  } else {
+      query = Query.updateEmail;
+  }
+
   PreparedStatement pstm = conn.prepareStatement(query);
   // Update
-  pstm.setString(1, oldData);
-  pstm.setString(2, newData);
-  pstm.setString(3, id);
+  //pstm.setString(1, oldData);
+  pstm.setString(1, newData);
+  pstm.setString(2, id);
   pstm.executeUpdate();
 
   System.out.println("Data Updated successfully!");

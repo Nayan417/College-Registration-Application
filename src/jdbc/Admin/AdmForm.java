@@ -116,6 +116,21 @@ class MyFrame extends JFrame implements ActionListener {
         gen.add(male);
         gen.add(female);
 
+        // Password
+        passwordLab1 = new JLabel("Enter Password");
+        passwordLab1.setBounds(leftColmrgn, topmrgn+=50, textWidth, textHeight);
+        c.add(passwordLab1);
+        password = new JTextField();
+        password.setBounds(leftColmrgnInplft, topmrgn, textWidth, textHeight);
+        c.add(password);
+
+        passwordLab2 = new JLabel("Conform Password");
+        passwordLab2.setBounds(rightColmrgnInplft, topmrgn, textWidth, textHeight);
+        c.add(passwordLab2);
+        confPassword = new JTextField();
+        confPassword.setBounds(rightColmrgnInpRt+20, topmrgn, textWidth, textHeight);
+        c.add(confPassword);
+
         // Taking Address
         addressLab = new JLabel("Address");
         addressLab.setBounds(leftColmrgn, topmrgn+=50, textWidth, textHeight);
@@ -123,20 +138,6 @@ class MyFrame extends JFrame implements ActionListener {
         address = new JTextArea();
         address.setBounds(leftColmrgnInplft, topmrgn, textWidth, textHeight);
         c.add(address);
-
-        passwordLab1 = new JLabel("Enter Password");
-        addressLab.setBounds(leftColmrgn, topmrgn+=50, textWidth, textHeight);
-        c.add(passwordLab1);
-        password = new JTextField();
-        address.setBounds(leftColmrgnInplft, topmrgn, textWidth, textHeight);
-        c.add(password);
-
-        passwordLab2 = new JLabel("Conform Password");
-        addressLab.setBounds(leftColmrgn, topmrgn+=50, textWidth, textHeight);
-        c.add(passwordLab2);
-        confPassword = new JTextField();
-        address.setBounds(rightColmrgnInpRt, topmrgn, textWidth, textHeight);
-        c.add(confPassword);
 
         // Terms and Condition
         terms = new JCheckBox();

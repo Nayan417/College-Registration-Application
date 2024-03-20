@@ -22,10 +22,16 @@ import jdbc.Admin.AHome;
 import registrationForm.Frame;
 
 public class Admin {
-  static JLabel Optlb, Idlb, NDlb, msgLab;
+  static JLabel Optlb, Idlb, NDlb, msgLab, courseLab, semesterLab;
   static JTextField input1, input2;
   JButton button1, button2, homeBtn;
-  static String btnLeve1, btnLevel2, ms = "Not Changed";
+  JComboBox courseBox, semesterBox;
+  Container c;
+  
+  static String btnLeve1, btnLevel2, ms = "Not Changed", selected = "null";
+  String courses[] = {"course","BTech", "Diploma","MTech"};
+  String semesters[] = {"semester","First","Second","Third","Fourth","Fifth","Sixth","Seven","Eight"};
+  
 
   int btnWidth = 100, btnHeight = 30, lftmgn = 50, topmgn = 130;
   
@@ -137,13 +143,13 @@ public class Admin {
   // Update_Class for data updation
   public class Update extends JFrame implements ActionListener {
     JComboBox option;
-    String options[] = { "select", "name", "Course", "semester", "mobileNo", "emailId",
+    String options[] = { "select", "Name", "Course", "Semester", "mobileNo", "emailId",
         "fatherName", "motherName", "dob", "gender"
     };
 
     public Update() {
       String FTitle = "Update Registered Data";
-      int width = 650, height = 600;
+      int width = 650, height = 600, textWidth = 150, textHeight = 30;
       // Container c = new Frame().newFrame(FTitle, width, height);
       setTitle(FTitle);
       setSize(width, height);
@@ -182,9 +188,10 @@ public class Admin {
       NDlb = new JLabel("Enter new data ");
       NDlb.setBounds(lftmgn, topmgn+=50, 200, 30);
       c.add(NDlb);
-      input2 = new JTextField();
-      input2.setBounds(lftmgn+210, topmgn, 150, 30);
-      c.add(input2);
+        input2 = new JTextField();
+        input2.setBounds(lftmgn+210, topmgn, 150, 30);
+        c.add(input2);
+      
 
       button2 = new JButton("Update");
       button2.setBounds(lftmgn, topmgn+=100, btnWidth, btnHeight);
@@ -214,9 +221,31 @@ public class Admin {
           AHome homePage = new AHome();
           setVisible(false);
         } else if (clickedBtn == "Enter") {
-          String updateData = option.getSelectedItem() + "";
-          NDlb.setText("Enter new " + updateData);
-          System.out.println("You are updating " + updateData);
+         selected = option.getSelectedItem() + "";
+          NDlb.setText("Enter new " + selected);
+          System.out.println("You are updating " + selected);
+          semesterLab = new JLabel("Semester");
+          if (selected.equals("course")){
+            System.out.println("Entered");
+            // Taking course
+            courseLab = new JLabel("Course");
+            courseLab.setBounds(lftmgn, topmgn+=50, 150, 30);
+            c.add(courseLab);
+            courseBox = new JComboBox(courses);
+            courseBox.setBounds(lftmgn+210, topmgn, 150, 30);
+            c.add(courseBox);
+            input2.setText("");
+          }
+          else if(selected.equals("semester")){
+          semesterLab.setBounds(lftmgn, topmgn, 150, 30);
+          c.add(semesterLab);
+          semesterBox = new JComboBox(semesters);
+          semesterBox.setBounds(lftmgn+210, topmgn, 150, 30);
+          c.add(semesterBox);
+          input2.setText("");
+          }  else {
+
+          }
         } else {
           if (option.getSelectedItem().equals("select") || input1.getText() == "" || input2.getText() == "") {
             msgLab.setText("You have to give all details to Update information!");

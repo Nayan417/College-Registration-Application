@@ -9,7 +9,15 @@ import jdbc.Query;
 
 public class App {
 public static void main(String[] args) {
-   AdmForm adF = new AdmForm();
+//   AdmForm adF = new AdmForm();
+   try{
+   //  ADAO.createTable();
+      //  ADAO.insertAdmData(admin);
+     // AdmForm obj = new AdmForm();
+   } catch(Exception e) {
+      System.out.println(e);
+
+   }
 }
 
 }

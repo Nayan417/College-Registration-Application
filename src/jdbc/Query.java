@@ -10,5 +10,16 @@ public class Query {
  protected static String update = "UPDATE student SET ? = ? where rollNo = ?";
  protected static String delete     = "DELETE FROM student where rollNo = ?";   
  protected static String date   = "SELECT CURDATE";
+
+ protected static String updateName = "UPDATE student SET name = ? where rollNo = ?";
+ protected static String updateCourse = "UPDATE student SET course = ? where rollNo = ?";
+ protected static String updateSemester = "UPDATE student SET semester = ? where rollNo = ?";
+ protected static String updateMobNo = "UPDATE student SET mobNo = ? where rollNo = ?";
+ protected static String updateEmail = "UPDATE student SET emailId = ? where rollNo = ?";
+ protected static String updateGender = "UPDATE student SET gender = ? where rollNo = ?";
+ protected static String updateFather = "UPDATE student SET fatherName = ? where rollNo = ?";
+ protected static String updateMother = "UPDATE student SET motherName = ? where rollNo = ?";
+ protected static String updateAddress = "UPDATE student SET address = ? where rollNo = ?";
+
 }
 
