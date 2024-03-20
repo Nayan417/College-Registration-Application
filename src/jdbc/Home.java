@@ -2,6 +2,7 @@ package jdbc;
 
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -37,8 +38,10 @@ class HomeFrame extends JFrame implements ActionListener{
    c.setLayout(null);
    // c.setBackground((Color.decode("#f0e9e9")));
 
-   int lftmrgn = 50, leftColmrgn = 230, topmrgn = 100, textWidth = 300, btnWidth = 100, textHeight = 40;
+   int lftmrgn = 50, leftColmrgn = 300, topmrgn = 100, textWidth = 300, btnWidth = 100, textHeight = 40;
    admnLeb = new JLabel("To Admin login click here");
+   admnLeb.setFont(new Font("Serif", Font.BOLD, 20));
+
    admnLeb.setBounds(lftmrgn, topmrgn, textWidth, textHeight);
    c.add(admnLeb);
    admBtn = new JButton("Login");

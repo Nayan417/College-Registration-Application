@@ -22,7 +22,7 @@ public class UserLogin {
 class UserFrame extends JFrame implements ActionListener{
  JLabel rollLeb, emailLeb, msgLeb;
  JTextField rollFd, passwordFd;
- JButton login;
+ JButton login, homeBtn;
 
   public UserFrame() {
 
@@ -55,24 +55,37 @@ class UserFrame extends JFrame implements ActionListener{
       c.add(login);
       login.addActionListener(this);
 
+           // Home button
+     homeBtn = new JButton("Home");
+     homeBtn.setBounds(lftmgn+150, topmgn, 100, 30);
+     c.add(homeBtn);
+     homeBtn.addActionListener(this);
+
       msgLeb = new JLabel("");
       msgLeb.setBounds(lftmgn, topmgn+=50, 550, 30);
       c.add(msgLeb);
       setVisible(true);
+
+
   }
 
   public void actionPerformed(ActionEvent ae) {
     try {
-     String rollNo = rollFd.getText();
-     String orgPassword = DAO.readPassword(rollNo);
-
-   if (passwordFd.getText().equals(orgPassword)) {
+     String clickedBtn = ae.getActionCommand();
+    if (clickedBtn.equals("Home")){
+       Home home = new Home();
+       setVisible(false);
+    } else{
+      String rollNo = rollFd.getText();
+      String orgPassword = DAO.readPassword(rollNo);
+    if (passwordFd.getText().equals(orgPassword)) {
     msgLeb.setText("Your are logined!");
     Student student = DAO.readSpData(rollNo, passwordFd.getText());
     Display obj = new Admin().new Display(student);
    }else {
      msgLeb.setText("Password is incorrect! Orginal Pas" + orgPassword);
    }
+  }
   } catch(Exception e) {
    System.out.println(e);
   }

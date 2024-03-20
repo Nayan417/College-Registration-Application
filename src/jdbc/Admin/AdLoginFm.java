@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 
 import admin.Admin;
 import admin.Admin.Display;
+import jdbc.Home;
 import registrationForm.Form;
 
 public class AdLoginFm {
@@ -71,7 +72,7 @@ class AdminFrame extends JFrame implements ActionListener{
    try {
     String clickedBtn = ae.getActionCommand();
     if (clickedBtn == "Home") {
-      AHome admHome = new AHome();
+      Home Home = new Home();
       setVisible(false);
     } else{
      String userName = rollFd.getText();
