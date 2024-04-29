@@ -1,0 +1,24 @@
+
+// * Add delay 
+ /*
+                int delay = 4000;
+                Timer timer = new Timer(delay, new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                 //    new LogoAdm();
+                     deletePanel.setVisible(false);
+                     dispose();
+                    }
+                });
+                timer.setRepeats(false);
+                timer.start();
+            */
+// Border
+    headPanel.setBorder(new EmptyBorder(15, 10, 50, 10));
+ 
+ Toolkit tkp = panel.getToolkit();
+ PrintJob pjp = tkp.getPrintJob(this, null, null);
+ Graphics g = pjp.getGraphics();
+ panel.print(g);
+ g.dispose();
+ pjp.end();

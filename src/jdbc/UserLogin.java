@@ -11,9 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import admin.Admin;
-import admin.Admin.Display;
-import registrationForm.Form;
+//import admin.Admin;
+//import admin.Admin.Display;
+import user.DisplayUser;
 
 public class UserLogin {
  public UserLogin() {
@@ -68,24 +68,23 @@ class UserFrame extends JFrame implements ActionListener{
       msgLeb.setBounds(lftmgn, topmgn+=50, 550, 30);
       c.add(msgLeb);
       setVisible(true);
-
-
   }
 
   public void actionPerformed(ActionEvent ae) {
     try {
      String clickedBtn = ae.getActionCommand();
     if (clickedBtn.equals("Home")){
-       Home home = new Home();
-       setVisible(false);
+         Home home = new Home();
+         
     } else{
       String rollNo = rollFd.getText();
       String orgPassword = DAO.readPassword(rollNo);
     if (passwordFd.getText().equals(orgPassword)) {
-    msgLeb.setText("Your are logined!");
-    Student student = DAO.readSpData(rollNo, passwordFd.getText());
-    Display obj = new Admin().new Display(student);
-   }else {
+    msgLeb.setText("Login Successful !");
+    DisplayUser dis = new DisplayUser(rollNo);
+    //Student student = DAO.readSpData(rollNo, passwordFd.getText());
+    
+  }else {
      msgLeb.setText("Password is incorrect! Orginal Pas" + orgPassword);
    }
   }

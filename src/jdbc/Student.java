@@ -10,6 +10,8 @@ public class Student {
  String rollNo;
  String name;
  String course;
+ String branch;
+ String session;
  String semester;
  String fatherName;
  String motherName;
@@ -22,7 +24,13 @@ public class Student {
  Date RegDate;
  int status;
 
- 
+  static String branchs[] =  {  "Branch", "CSE", "ECE", "CE", "ME", "EEE" };
+  static String sessions[] = { "Session","2K20-2K24", "2k21-2k25", "2K22-2k26" };
+  static String courses[] =  {   "Course", "BTech", "Diploma", "MTech" };
+  static String semesters[]= { "Semester", "First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seven", "Eight" };
+   ArrayList<String> brnc = new ArrayList<>();
+   
+  
  public Student() {
   System.out.print("\nEnter Roll No: ");
   rollNo = input.nextLine();
@@ -56,12 +64,14 @@ public class Student {
  }
  
  // Parameterized Constructor
- public Student( String rollNo, String name, String course, String semester, String fatherName, String motherName, String mobNo,
+ public Student( String rollNo, String name, String course, String session, String branch, String semester, String fatherName, String motherName, String mobNo,
  String emailId, String dob, String gender, String address, String password,  int status) {
   
   this.rollNo = rollNo;
   this.name = name;
   this.course = course;
+  this.session = session;
+  this.branch = branch;
   this.semester = semester;
   this.fatherName = fatherName;
   this.motherName = motherName;
@@ -79,6 +89,8 @@ public class Student {
  public String getRollNo() {return this.rollNo;}
  public String getName() {return this.name;}
  public String getCourse() {return this.course;}
+ public String getSession() {return this.session;}
+ public String getBranch() {return this.branch;}
  public String getSemester() {return this.semester;}
  public String getMobNo() {return this.mobNo;}
  public String getFatherName() {return this.fatherName;}
@@ -90,6 +102,12 @@ public class Student {
  public String getPassword() {return this.password;}
  public Date getRegDate() {return this.RegDate;}
  public int getStatus() {return this.status;}
+
+ // Static method
+ public static String[] getSessions() {return sessions;}
+ public static String[] getBranchs() {return branchs;}
+ public static String[] getCourses() {return courses;}
+ public static String[] getSemesters() {return semesters;}
 
  // Display Data  public static void display(ArrayList<Student> students) {
   public static void displayData(ArrayList<Student> students){

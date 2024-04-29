@@ -19,7 +19,7 @@ public class DB {
    conn = DriverManager.getConnection(url, user, password);
 
    Statement stm = conn.createStatement();
-   stm.execute(Query.createAdmDB);
+   stm.execute(AQuery.createAdmDB);
 
    System.out.println("Database Connected Successfully!");
   } catch (Exception e) {
